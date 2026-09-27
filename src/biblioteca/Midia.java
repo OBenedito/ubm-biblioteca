@@ -1,7 +1,7 @@
 package biblioteca;
 
 public class Midia extends ItemAcervo {
-    private String formato; // "DVD", "Blu-ray", "CD"
+    private String formato;
     private int duracaoMinutos;
 
     public Midia(String titulo, int ano, String formato, int duracaoMinutos) {
@@ -10,7 +10,6 @@ public class Midia extends ItemAcervo {
         this.duracaoMinutos = duracaoMinutos;
     }
 
-    // Midia circula rapido: sobrescreve o prazo padrao.
     @Override
     public int calcularPrazoDevolucao() {
         return 3;
@@ -22,6 +21,11 @@ public class Midia extends ItemAcervo {
         super.exibirFicha();
         System.out.println("Formato : " + formato);
         System.out.println("Duracao : " + duracaoMinutos + " min");
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " - " + formato + ", " + duracaoMinutos + " min";
     }
 
     public String getFormato() {

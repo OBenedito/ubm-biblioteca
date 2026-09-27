@@ -12,20 +12,29 @@ public class Principal {
 
                 Revista r1 = new Revista("Revista UBM Ciencia", 2026, 12, "Semestral");
 
-                Midia m1 = new Midia("Central do Brasil", 1998, "DVD", 113); 
-                
+                Midia m1 = new Midia("Central do Brasil", 1998, "DVD", 113);
+
+                Jornal j1 = new Jornal("Jornal de Barra Mansa", 2026, "28/08/2026", "Cidades");
+
                 Usuario u1 = new Usuario("Ana Souza", "2026101",
                                 "Engenharia de Software", "ana.souza@aluno.ubm.br");
                 Usuario u2 = new Usuario("Bruno Lima", "2026102", "Sistemas de Informacao");
                 u2.setEmail("bruno.lima@aluno.ubm.br");
 
-                ItemAcervo[] acervo = { l1, l2, l3, r1, m1 };
+                ItemAcervo[] acervo = { l1, l2, l3, r1, m1, j1 };
                 System.out.println("=== UBM Biblioteca - acervo ===");
                 for (int i = 0; i < acervo.length; i++) {
                         acervo[i].exibirFicha();
                         System.out.println("Prazo : "
                                         + acervo[i].calcularPrazoDevolucao() + " dias");
                 }
+                System.out.println("=== Acervo resumido ===");
+                for (int i = 0; i < acervo.length; i++) {
+                        System.out.println(acervo[i] + " | "
+                                        + acervo[i].calcularPrazoDevolucao() + " dias");
+
+                }
+                
                 System.out.println("=== Usuarios ===");
                 u1.exibirFicha();
                 u2.exibirFicha();

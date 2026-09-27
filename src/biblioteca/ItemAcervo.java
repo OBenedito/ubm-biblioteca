@@ -22,6 +22,11 @@ public class ItemAcervo {
         System.out.println("ano: " + anoPublicacao);
     }
 
+    @Override
+    public String toString() {
+        return titulo + " (" + anoPublicacao + ")";
+    }
+
     public String getTitulo() {
         return titulo;
     }

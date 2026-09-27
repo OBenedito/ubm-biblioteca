@@ -32,6 +32,11 @@ public class Livro extends ItemAcervo {
         System.out.println("Paginas : " + numeroPaginas);
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + " - " + autor;
+    }
+
     public String getAutor() {
         return autor;
     }
