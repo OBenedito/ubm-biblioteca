@@ -7,7 +7,7 @@ public class Coelho extends Animal {
 
     @Override
     public void fazerSom() {
-        System.out.println("Nhac nhac");
+        System.out.println("nhac nhac");
    }
 
 }

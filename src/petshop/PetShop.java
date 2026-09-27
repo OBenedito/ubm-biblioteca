@@ -14,19 +14,20 @@ public class PetShop {
         meuCoelho.cor = "preto";
         meuCoelho.peso = 5;
 
+        Passaro meuPassaro = new Passaro();
+        meuPassaro.cor = "verde";
+        meuPassaro.peso = 1;
+        meuPassaro.envergadura = 0.3;
+
         meuCachorro.comer();
         meuCachorro.enterrarOsso();
         gatoDaVizinha.subirEmArvore();
         meuCoelho.pular();
+        meuPassaro.voar();
 
-        Animal a1 = meuCachorro;
-        Animal a2 = gatoDaVizinha;
-        Animal a3 = meuCoelho;
-        a1.fazerSom();
-        a2.fazerSom();
-        a3.fazerSom();
-    }
-
-    
-    
+        Animal[] animais = { meuCachorro, gatoDaVizinha, meuCoelho, meuPassaro };
+        for (int i = 0; i < animais.length; i++) {
+           animais[i].fazerSom(); 
+        } 
+    } 
 }

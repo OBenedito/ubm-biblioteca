@@ -5,10 +5,10 @@ public class Animal {
     protected String cor;
 
     public void comer() {
-        System.out.println("Comendo...");
+        System.out.println("comendo...");
     }
 
     public void fazerSom() {
-        System.out.println("Som generico");
+        System.out.println("som generico");
     }
 }
