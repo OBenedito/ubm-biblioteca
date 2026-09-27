@@ -1,8 +1,12 @@
 package biblioteca;
 
+/**
+ * Um jornal E UM item do acervo. Acrescenta a data da edicao e a editoria.
+ * Circula por um unico dia: prazo proprio de 1 dia.
+ */
 public class Jornal extends ItemAcervo {
-    private String dataEdicao;
-    private String editoria;
+    private String dataEdicao; // "28/08/2026" — texto por enquanto (datas: Aula 7)
+    private String editoria; // "Cidades", "Economia", "Esportes"...
 
     public Jornal(String titulo, int ano, String dataEdicao, String editoria) {
         super(titulo, ano);
@@ -16,10 +20,14 @@ public class Jornal extends ItemAcervo {
     }
 
     @Override
+    public String getTipo() {
+        return "Jornal";
+    }
+
+    @Override
     public void exibirFicha() {
-        System.out.println("--- Jornal ---");
         super.exibirFicha();
-        System.out.println("Data    : " + dataEdicao);
+        System.out.println("Data : " + dataEdicao);
         System.out.println("Editoria: " + editoria);
     }
 
