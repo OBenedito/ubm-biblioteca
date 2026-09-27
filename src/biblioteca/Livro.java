@@ -17,6 +17,11 @@ public class Livro {
         this.anoPublicacao = ano;
     }
 
+    public Livro(String titulo, String autor, int ano, int paginas) {
+        this(titulo, autor, ano);
+        this.numeroPaginas = paginas;
+    }
+
     public String getTitulo() {
         return titulo;
     }
@@ -24,7 +29,7 @@ public class Livro {
     public String getAutor() {
         return autor;
     }
-    
+
     public int getAnoPublicacao() {
         return anoPublicacao;
     }
@@ -39,5 +44,13 @@ public class Livro {
 
     public void setNumeroPaginas(int numeroPaginas) {
         this.numeroPaginas = numeroPaginas;
+    }
+
+    public void exibirFicha() {
+        System.out.println("--- Livro ---");
+        System.out.println("Titulo : " + titulo);
+        System.out.println("Autor : " + autor);
+        System.out.println("Ano : " + anoPublicacao);
+        System.out.println("Paginas : " + numeroPaginas);
     }
 }

@@ -45,4 +45,11 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
+    public void exibirFicha() {
+    System.out.println("--- Usuario ---");
+    System.out.println("Nome     : " + nome);
+    System.out.println("Matricula: " + matricula);
+    System.out.println("Curso    : " + curso);
+    System.out.println("Email    : " + email);
+    }
 }
