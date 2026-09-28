@@ -113,6 +113,13 @@ public class Principal {
         System.out.println("Existe 2026999? " + usuarios.containsKey("2026999"));
         System.out.println("get de chave inexistente: " + usuarios.get("2026999"));
 
+        // ----- DESAFIO-05: identidade de Usuario -----
+        // Mesma matricula, outro nome: para o sistema, e a MESMA pessoa.
+        Usuario outroNome = new Usuario("Bruno L. Lima", "2026102");
+        System.out.println("=== Identidade de Usuario ===");
+        System.out.println("u2 = " + u2);
+        System.out.println("outroNome.equals(u2) ? " + outroNome.equals(u2));
+
         // Metodo default da interface + constante da interface.
         System.out.println("Prazo de livro dentro da politica de "
                 + Emprestavel.PRAZO_MAXIMO_DIAS + " dias? " + l1.dentroDaPolitica());
@@ -132,6 +139,18 @@ public class Principal {
         }
         l1.emprestar(u2); // ja esta emprestado: o status impede
         l1.devolver();
+
+        // ----- DESAFIO-05: listarDisponiveis e contarPorStatus -----
+        System.out.println("=== Disponiveis no acervo ===");
+        for (ItemAcervo item : acervo.listarDisponiveis()) {
+            System.out.println(item);
+        }
+
+        System.out.println("=== Itens por status ===");
+        Map<StatusItem, Integer> porStatus = acervo.contarPorStatus();
+        for (StatusItem situacao : porStatus.keySet()) {
+            System.out.println(situacao.getDescricao() + ": " + porStatus.get(situacao));
+        }
 
         // instanceof com padrao de tipo: so o item do acervo tem status.
         // Pela variavel e (tipo Emprestavel) so se chama o que a interface

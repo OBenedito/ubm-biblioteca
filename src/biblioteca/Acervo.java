@@ -79,6 +79,31 @@ public class Acervo {
         return contagem;
     }
 
+    // ----- DESAFIO-05: CONTAGEM POR STATUS -----
+    // Mesma construcao de contarPorTipo(), mas a CHAVE e o enum StatusItem,
+    // nao uma String: o compilador garante que so existem status validos.
+    public Map<StatusItem, Integer> contarPorStatus() {
+        Map<StatusItem, Integer> contagem = new HashMap<>();
+        for (ItemAcervo item : itens) {
+            StatusItem status = item.getStatus();
+            contagem.put(status, contagem.getOrDefault(status, 0) + 1);
+        }
+        return contagem;
+    }
+
+    // ----- DESAFIO-05: LISTAR DISPONIVEIS -----
+    // Devolve uma NOVA lista so com os itens disponiveis. O acervo nao muda:
+    // e a ideia da copia defensiva com um if dentro do for-each.
+    public List<ItemAcervo> listarDisponiveis() {
+        List<ItemAcervo> disponiveis = new ArrayList<>();
+        for (ItemAcervo item : itens) {
+            if (item.estaDisponivel()) {
+                disponiveis.add(item);
+            }
+        }
+        return disponiveis;
+    }
+
     // ----- ACESSO A LISTA -----
 
     // Copia defensiva: quem receber a lista pode mexer nela a vontade,
